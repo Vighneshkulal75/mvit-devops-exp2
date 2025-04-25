@@ -1,6 +1,7 @@
 package org.test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -12,18 +13,18 @@ public class WebpageTest {
 
     @BeforeTest
     public void openBrowser() throws InterruptedException {
-        driver = new ChromeDriver();
+        driver = new EdgeDriver();
         driver.manage().window().maximize();
         Thread.sleep(2000);
-        driver.get("https://sauravsarkar-codersarcade.github.io/DevOps-VTU-MVN/");
+        driver.get("https://vighneshkulal75.github.io/mvit-devops-exp2/ ");
     }
     @Test
     public void titleValidationTest(){
         String actualTitle = driver.getTitle();
         System.out.println(actualTitle);
-        String expectedTitle = "Coders Arcade - CI/CD Learning";
+        String expectedTitle = "Login Page";
         Assert.assertEquals(actualTitle, expectedTitle);
-        assertTrue(true, "Title contains 'CI/CD'");
+        assertTrue(true, "Title contains 'Login Page'");
     }
     @AfterTest
     public void closeBrowser() throws InterruptedException {
